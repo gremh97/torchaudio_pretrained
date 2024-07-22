@@ -34,22 +34,23 @@ The text-to-speech pipeline goes as follows:
 Experiments : https://colab.research.google.com/drive/18XqwFNRuw9iUepGFnGn4g2SVuz4ftjfZ#scrollTo=mjVxbFAznoxM
 """
 
+"""
+
 def character_based_encoder(text, print_result=False):
-    """ 
+
     ####### How text_processor works #######
-    symbols = "_-!'(),.:;? abcdefghijklmnopqrstuvwxyz"
-    look_up = {s: i for i, s in enumerate(symbols)}
-    symbols = set(symbols)
+    # symbols = "_-!'(),.:;? abcdefghijklmnopqrstuvwxyz"
+    # look_up = {s: i for i, s in enumerate(symbols)}
+    # symbols = set(symbols)
 
-    def text_to_sequence(text):o
-        text = text.lower()
-        return [look_up[s] for s in text if s in symbols]
+    # def text_to_sequence(text):o
+    #     text = text.lower()
+    #     return [look_up[s] for s in text if s in symbols]
 
-    text = "Hello world! Text to speech!"
-    print(text_to_sequence(text))
-    # [19, 16, 23, 23, 26, 11, 34, 26, 29, 23, 15, 2, 11, 31, 16, 35, 31, 11, 31, 26, 11, 30, 27, 16, 16, 14, 19, 2]
+    # text = "Hello world! Text to speech!"
+    # print(text_to_sequence(text))
+    ## [19, 16, 23, 23, 26, 11, 34, 26, 29, 23, 15, 2, 11, 31, 16, 35, 31, 11, 31, 26, 11, 30, 27, 16, 16, 14, 19, 2]
 
-    """
     processor = torchaudio.pipelines.TACOTRON2_WAVERNN_CHAR_LJSPEECH.get_text_processor()
     processed, lengths = processor(text)
 
@@ -73,7 +74,7 @@ def phoneme_based_encoder(text, print_result=False):
         print([processor.tokens[i] for i in processed[0, : lengths[0]]])
     
     return processed, lengths
-
+"""
 
 
 class Tacotron2:

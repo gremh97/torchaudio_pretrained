@@ -1,11 +1,11 @@
 # TORCHAUDIO TACOTRON2 w/ Various Vocoders
 
-## ENV Set
+## ENV Setting
 ```bash
 cat requirements.txt | xargs -n 1 pip install           # Linux Centos
 ```
 
-For macOS only specific version of torch, torchaudio can execute .py
+For macOS only specific version of torch, torchaudio can execute `.py`
 ```bash
  conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 -c pytorch
 ```
